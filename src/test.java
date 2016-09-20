@@ -13,31 +13,22 @@ public class test {
 
 	//get the title
 	String title = doc.title();
-    System.out.println("title: " + title);
-    
-    // get all links in page
-   /* Elements links = doc.select("a[href]");
-    for (Element link : links) {
-      // get the value from the href attribute
-      System.out.println("\nlink: " + link.attr("href"));
-      System.out.println("text: " + link.text());
-    }*/
+    System.out.println("title: " + title);   
     
     
-    //write name of all projects
+    //write name of all projects En cours
     Elements projectsOnline = doc.getElementsByClass("online");
-   //Elements projectsOnline=projects //separate online and funded
     for(Element project : projectsOnline){
-    	Elements name= project.getElementsByClass("name"); //måste man leta efter alla elements här?
+    	Elements name= project.getElementsByClass("name"); //necessary?
     	for(Element thisName : name){
     		System.out.println(thisName.text());
     	}
 
     }
+    //write name of all projects Financé
     Elements projectsComplete = doc.getElementsByClass("completed");
-    //Elements projectsOnline=projects //separate online and funded
      for(Element project : projectsComplete){
-     	Elements name= project.getElementsByClass("name"); //måste man leta efter alla elements här?
+     	Elements name= project.getElementsByClass("name");
      	for(Element thisName : name){
      		System.out.println(thisName.text()+" - funded");
      	}
